@@ -2,7 +2,7 @@ import React from 'react';
 import PokeCard from '../pokeCard/pokeCard';
 import Pagination from '../pokeCard/pagination'
 import './styles.css';
-let details=[];
+
 
 export default class PrimaryCol extends React.Component {
     constructor() {
@@ -59,35 +59,9 @@ export default class PrimaryCol extends React.Component {
             .catch(error => {
                 console.log(error);
             })
+            return true;
         })
-        this.state.pokemones.map  ((pokemon)=>
-        {
-            fetch(pokemon.url)
-            .then(response => response.blob())
-            .then(data => {
-                console.log(data.type)
-                if(data.type == 'image/gif') {
-                    this.setState({urlExist:true})
-                }
-                // const image = URL.createObjectURL(data)
-                // console.log(image)
-            })
-            .catch(error => {
-                
-                this.setState({urlExist:false})
-            })
-        })
-
-        this.state.pokemones.map  ((pokemon)=>
-        {
-            fetch(pokemon.url)
-            .then(response => response.json())
-            .then(dato => this.setState({urlAltPok: dato.sprites.front_default}))
-            .catch(error => {
-                
-                console.log(error);
-            })
-        })
+        
 
 
 
@@ -152,12 +126,7 @@ export default class PrimaryCol extends React.Component {
    
     render() {
       
-            let url="";
-            if(this.state.urlExist===false)
-                {
-                    url=this.state.urlAltPok;
-                }
-            
+          
         
         
         return (

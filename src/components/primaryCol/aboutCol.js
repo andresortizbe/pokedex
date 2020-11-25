@@ -1,8 +1,7 @@
 import React from 'react';
-import PokeCard from '../pokeCard/pokeCard';
-import Pagination from '../pokeCard/pagination'
+
 import './styles.css';
-let details=[];
+
 
 export default class PrimaryCol extends React.Component {
     constructor() {
