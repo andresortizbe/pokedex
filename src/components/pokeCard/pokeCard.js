@@ -84,14 +84,14 @@ handleOpenModal = () => {
            <div className="title-section"> <div className="pokeId"><h4 className="number">{this.pokeCode(this.props.img)}</h4></div>
             <h3 className="pokeTitle">{this.props.name.toUpperCase()}</h3></div>
             <img className="img zoom" src={this.props.img} alt={this.props.name} />
-            <img className="details" src={'/img/icons/pokedex.png'}onClick={this.handleOpenModal}/>
+            <img className="details" src={'/img/icons/pokedex.png'} alt="detalles" onClick={this.handleOpenModal}/>
             <Modal isOpen={this.state.showModal} style={customStyles}>
                     <PokemonDetails code={this.pokeCode(this.props.img)} 
                     img={this.props.img} 
                     name={this.props.name}
                     url={this.props.url}
                     />
-                   <img className="details" src={'/img/icons/pokedex.png'}onClick={this.handleCloseModal}/>
+                   <img className="details" src={'/img/icons/pokedex.png'} alt="about" onClick={this.handleCloseModal}/>
             </Modal>
             
         </div>

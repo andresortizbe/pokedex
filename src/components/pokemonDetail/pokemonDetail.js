@@ -32,7 +32,7 @@ export default class pokemonDetails extends React.Component {
             .then(response => response.blob())
             .then(data => {
                 console.log(data.type)
-                if(data.type == 'image/gif') {
+                if(data.type === 'image/gif') {
                     this.setState({gifExist:true})
                 }
                 // const image = URL.createObjectURL(data)
@@ -43,7 +43,7 @@ export default class pokemonDetails extends React.Component {
             .then(response => response.blob())
             .then(data => {
                 console.log(data.type)
-                if(data.type == 'image/gif') {
+                if(data.type === 'image/gif') {
                     this.setState({urlExist:true})
                 }
                 // const image = URL.createObjectURL(data)
